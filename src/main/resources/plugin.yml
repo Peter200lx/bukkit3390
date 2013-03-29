@@ -1,0 +1,13 @@
+name: BUKKIT3390
+main: com.github.peter200lx.bukkit3390.Bukkit3390
+version: maven-version-number
+website: https://github.com/Peter200lx/bukkit3390
+author: peter200lx
+description: >
+             Test BUKKIT3390 (Inverted Trapdoor)
+commands:
+  bk3390:
+    description: donno what this could be used for yet
+    usage: |
+           /<command> [a|b|c]
+           Example: /<command> - Prints help for plugin.
