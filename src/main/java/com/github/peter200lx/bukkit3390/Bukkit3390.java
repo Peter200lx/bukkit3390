@@ -98,16 +98,14 @@ public class Bukkit3390 extends JavaPlugin {
 					case LEFT_CLICK_BLOCK:
 						//display block info
 						subject.sendMessage("Clicked on TRAP_DOOR:" + data2Str(b));
+						subject.sendMessage("Bukkit toString:" + ((TrapDoor) b).toString());
 						break;
 					case RIGHT_CLICK_BLOCK:
 						//flip block
-						Boolean inverted = ((b.getData() & 0x08) == 0x08);
+						Boolean inverted = ((TrapDoor) b).isInverted();
 						inverted = !inverted;
-						if(inverted) {
-							clicked.setData((byte)(clicked.getData()|0x08), false);
-						} else {
-							clicked.setData((byte)(clicked.getData()&(~0x08)), false);
-						}
+						((TrapDoor) b).setInverted(inverted);
+						clicked.setData(b.getData(), false);
 						subject.sendMessage("The TRAP_DOOR has been flipped!");
 						break;
 					default:
@@ -131,7 +129,7 @@ public class Bukkit3390 extends JavaPlugin {
 			switch (b.getItemType()) {
 			case TRAP_DOOR:
 				return ((TrapDoor) b).getAttachedFace().toString()
-						+ (((data & 0x08) == 0x08) ? " INVERTED" : "") + " is "
+						+ (((TrapDoor) b).isInverted() ? " INVERTED" : "") + " is "
 						+ (((TrapDoor) b).isOpen() ? "OPEN" : "CLOSED");
 			default:
 				return "" + data;

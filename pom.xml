@@ -7,7 +7,7 @@
   <artifactId>Bukkit3390</artifactId>
   <packaging>jar</packaging>
 
-  <version>0.1-PREAPI</version>
+  <version>0.1</version>
   <name>BUKKIT3390</name>
   <description>Verify BUKKIT-3390.</description>
   <url>https://github.com/Peter200lx/bukkit3390</url>
@@ -38,7 +38,7 @@
     <dependency>
       <groupId>org.bukkit</groupId>
       <artifactId>bukkit</artifactId>
-      <version>1.4.5-R1.0</version>
+      <version>1.5.1-R0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
 
